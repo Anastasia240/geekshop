@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from mainapp.models import ProductCategory, Product
 
 # Create your views here.
 
@@ -41,5 +42,15 @@ def context(request):
     }
     return render(request, 'mainapp/test_context.html', content)
 
-def login(request):
-    return HttpResnonse('Ok!')
+
+def main(reguest):
+    title = 'главная'
+
+    products = Product.objects.all()[:3]
+
+    content = {
+        'title': title,
+        'products': products
+
+    }
+    return render(reguest, 'mainapp/index.html', content)

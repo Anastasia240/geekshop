@@ -42,4 +42,4 @@ def context(request):
     return render(request, 'mainapp/test_context.html', content)
 
 def login(request):
-    return HttpResnonse('Ok')
+    return HttpResnonse('Ok!')

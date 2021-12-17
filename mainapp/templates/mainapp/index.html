@@ -8,15 +8,14 @@
 	<link rel="stylesheet" href="{% static 'style.css' %}">
 	<link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
  {% endblock %}
-</head>
-<body>
+
 	    {% block menu %}
 		<div class="slider">
 			<div class="header clearfix">
 				<a href="index.html" class="logo"></a>
 				<ul class="menu">
 					<li><a href="{% url 'main' %}" class="active">домой</a></li>
-					<li><a href="{% url 'products' %}">продукты</a></li>
+					<li><a href="{% url 'products:index' %}">продукты</a></li>
 					<li><a href="{% url 'contact' %}">контакты</a></li>
 				</ul>
 				<a href="#" class="search"></a>
@@ -26,7 +25,7 @@
 				<h3 class="big"> удобные стулья</h3>
 				<p>Новый уровень комфорта. Отличные характеристики.</p>
 				<a href="#" class="button-order">заказать <img src="/static/img/arrow.png" alt=""></a>
-			</div>	
+			</div>
 			<div class="navi">
 				<a href="#"></a><a href="#"></a><a href="#"></a>
 			</div>
@@ -42,7 +41,10 @@
 			<div class="clearfix">
 			</div>
 			<div class="tab-content">
+
 				{% for product in products %}
+            </div>
+
 
 				<div class="block">
 					<a href="#"><img src="/media/{{ product.image }}"  alt="{{ product.short_desc }}">
@@ -54,7 +56,8 @@
 						</div>
 					</a>
 			 </div>
+			</div>
 				{% endfor %}
-		
+
 		<div class="clr"></div>
  {% endblock %}

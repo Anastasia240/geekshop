@@ -19,8 +19,8 @@ from django.urls import path, include
 from mainapp.views import main, products, contact, context
 from django.conf import settings
 
-
 urlpatterns = [
+
     path('admin/', admin.site.urls),
     path('', main, name='main'),
     path('products/', products, name='products'),
@@ -31,12 +31,13 @@ urlpatterns = [
     path('products_office', products, name="products_office"),
     path('products_modern', products, name="products_modern"),
     path('products_classic', products, name="products_classic"),
-    #/path('auth/', include, 'mainapp.urls')#/,
-
+    path('products/', include('mainapp.urls', namespace='products')),
+    path('auth/', include('authapp.urls', namespace='auth')),
+    path('auth/', include('mainapp.urls')),
+    path('basket/', include('basketapp.urls', namespace='basket')),
 ]
-
-
-
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 

@@ -1,34 +1,35 @@
+
 <!DOCTYPE html>
-{% load static %}
+{%load static%}
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>
-        {% block title %}
-            {{ title|title }}
-        {% endblock %}
+        {%block title%}
+            {{title|title}}
+        {%endblock%}
     </title>
     {% block css %}
 	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 	<link rel="stylesheet" href=" {% static 'fonts/font-awesome/css/font-awesome.css' %}">
-    {% endblock %}
+    {%endblock%}
 
-    {% block js %}
+    {%block js%}
 
-    {% endblock %}
+    {%endblock%}
 
 </head>
 <body>
 	<div class="container">
 
 
-        {% block menu %}
+        {%block menu%}
 
-        {% endblock %}
+        {%endblock%}
 
-        {% block content %}
+        {%block content%}
 
-        {% endblock %}
+        {%endblock%}
 
 
     </div>
